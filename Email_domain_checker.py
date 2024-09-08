@@ -212,22 +212,22 @@ def main():
         dmarc_test, policy = check_dmarc_policy(domain)
         if not dmarc_test:
             print("No DMARC record")
-            score = 3
+            score += 3
         if not policy: 
             print("No DMARC policy")
-            score = 1
+            score += 1
         
         if not spf_lookup(domain): 
             print("NO SPF")
-            score = 2
+            score += 2
 
         if not check_domain_resolution(domain):
             print("Domain can't be resolved")
-            score = 3
+            score += 3
         
         if not check_remote_connection(f"http://{domain}"):
             print("Failed remote connection")
-            score = 3
+            score += 3
         
         # if ip_addresses:
         #     for ip_address in ip_addresses:
