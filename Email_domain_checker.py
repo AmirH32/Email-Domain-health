@@ -235,8 +235,10 @@ def main():
         
         if score >= 3:
             print("=== EMAIL DOES NOT EXIST - RED ===")
+        elif score == 1:
+            print("=== EMAIL is YELLOW (likely to exist) ===")
         elif score == 2:
-            print("=== EMAIL is YELLOW === ")
+            print("=== EMAIL is ORANGE (likely to not exist) ===")
         else:
             print("=== EMAIL is valid - GREEN ===")
 
